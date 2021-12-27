@@ -7,4 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Task.create(name: "Schedule meetings", completed: false)
 Task.create(name: "Eat lunch", completed: false)
-#id: "task-0", name: "Eat", completed: true
