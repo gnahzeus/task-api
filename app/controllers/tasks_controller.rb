@@ -1,13 +1,10 @@
 class TasksController < ApplicationController
-  # validate user
   #before_action :authenticate_user!
   #before_action :set_task, only: [:show, :update, :destroy]
 
   # GET /tasks
   def index
-    #@tasks = Task.all
     tasks = Task.order("created_at DESC")
-    #render json: @tasks
     render json: tasks
   end
 
@@ -18,7 +15,6 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    #@task = Task.new(task_params)
     task = Task.create(task_params)
     render json: task
   end
@@ -29,17 +25,10 @@ class TasksController < ApplicationController
     task.update(task_params)
     render json: task
     
-    #if task.update(task_params)
-    #   render json: @task
-    #  render json: task
-    #else
-    #  render json: task.errors, status: :unprocessable_entity
-    #end
   end
 
   # DELETE /tasks/1
   def destroy
-    #@task.destroy
     task = Task.find(params[:id])
     task.destroy
     head :no_content, status: :ok
